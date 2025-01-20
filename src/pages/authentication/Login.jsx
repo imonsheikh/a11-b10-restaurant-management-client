@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react';
 // import { AuthContext } from '../../provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
-import { AuthContext } from '../provider/AuthProvider';
-import logo2 from '../assets/logo2.png'
+import logo2 from '../../assets/food-logo.png'
 import Swal from 'sweetalert2';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
 
-    const {handleGoogleLogin,handleLogin,setUser} = useContext(AuthContext)
+    const {handleGoogleLogin,handleLogin,setUser} = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     
