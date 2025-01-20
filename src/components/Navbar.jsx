@@ -3,7 +3,7 @@ import logo from '../assets/food-logo.png'
 import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 const Navbar = () => {
-  const { user, logOut } = useAuth()
+  const { user, handleLogout } = useAuth()
   return (
     <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
       <div className='flex-1'>
@@ -61,12 +61,10 @@ const Navbar = () => {
               <li>
                 <Link to='/my-orders'>My Orders</Link>
               </li>
-              <li>
-                <Link to='/bid-requests'>Bid Requests</Link>
-              </li>
+        
               <li className='mt-2'>
                 <button
-                  onClick={logOut}
+                  onClick={handleLogout}
                   className='bg-gray-200 block text-center'
                 >
                   Logout

@@ -3,15 +3,14 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
 
 
 const Register = () => {
   const navigate = useNavigate();
 
-  const { handleRegister, setUser, updateUserProfile, handleGoogleLogin} =
-    useContext(AuthContext);
+  const { handleRegister, setUser, updateUserProfile, handleGoogleLogin} = useAuth()
   const [error, setError] = useState("");
   const [showPassword,setShowPassword] = useState(false)
 

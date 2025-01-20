@@ -210,7 +210,7 @@ const Login = () => {
                           <div className='mt-2'>
                           <p >New to website? Please <Link 
                            className='underline text-red-700 font-semibold'
-                           to='/auth/register'>Register</Link></p>
+                           to='/register'>Register</Link></p>
                           <h1>Forgot password? <Link to='/auth/forgotPassword' state={email} className='text-blue-600 underline'>Click here</Link></h1>
                           </div>
                     </div>
