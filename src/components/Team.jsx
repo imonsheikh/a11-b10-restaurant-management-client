@@ -16,7 +16,7 @@ const Team = () => {
                         <div className="p-6">
                             <h4 className="text-gray-800 text-base font-extrabold">John Doe</h4>
                             <p className="text-gray-600 text-xs mt-1">Software Engineer</p>
-                            <p className="text-gray-600 mt-4 text-sm">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                            <p className="text-gray-600 mt-4 text-sm">A chef is a professional cook and tradesperson who is proficient in all aspects of food preparation</p>
 
                             <div className="space-x-4 mt-6">
                                 <button type="button"
@@ -54,7 +54,7 @@ const Team = () => {
                         <div className="p-6">
                             <h4 className="text-gray-800 text-base font-extrabold">Mark Adair</h4>
                             <p className="text-gray-600 text-xs mt-1">Software Engineer</p>
-                            <p className="text-gray-600 mt-4 text-sm">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                            <p className="text-gray-600 mt-4 text-sm">Chef is a 2014 American road comedy-drama film written, produced, and directed by Jon Favreau.</p>
 
                             <div className="space-x-4 mt-6">
                                 <button type="button"
@@ -92,7 +92,7 @@ const Team = () => {
                         <div className="p-6">
                             <h4 className="text-gray-800 text-base font-extrabold">Simon Konecki</h4>
                             <p className="text-gray-600 text-xs mt-1">Web Designer</p>
-                            <p className="text-gray-600 mt-4 text-sm">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                            <p className="text-gray-600 mt-4 text-sm">a skilled and trained cook who works in a hotel or restaurant, especially the most important cook.</p>
 
                             <div className="space-x-4 mt-6">
                                 <button type="button"

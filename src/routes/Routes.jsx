@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/authentication/Login";
 import Register from "../pages/authentication/Register";
+import AllFoods from "../pages/AllFoods";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/all-foods',
-            element: <h1>AllFoods</h1>
+            element: <AllFoods></AllFoods>
         },
         {
             path: '/gallery',
