@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
     return (
@@ -23,8 +24,10 @@ const Card = () => {
   
           <div className="mt-8 flex items-center flex-wrap gap-4">
             <h3 className="text-xl text-gray-800 font-bold flex-1">$12.90</h3>
+            <Link to='/single-food'>
             <button type="button"
               className="px-5 py-2.5 rounded-lg text-white text-sm tracking-wider bg-blue-600 hover:bg-blue-700 outline-none">Details</button>
+            </Link>
           </div>
         </div>
       </div>
