@@ -4,7 +4,7 @@ import LightGallerys from '../components/LightGallerys';
 
 const Gallery = () => {
     return (
-        <div>
+        <div className=''>
             <Heading title={'Gallery'} colTitle={'Section'}></Heading>
             <div>
             <LightGallerys></LightGallerys>

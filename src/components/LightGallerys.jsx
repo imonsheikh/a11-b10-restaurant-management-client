@@ -29,17 +29,17 @@ const LightGallerys = () => {
 
   
       >
-        <a href={gallery1} >
+        <a href={gallery1}  >
           <img alt="img1" src={gallery1} />
         </a>
-        <a href={gallery1}>
-          <img alt="img1" src={gallery1} />
+        <a href={gallery2}>
+          <img alt="img1" src={gallery2} />
         </a>
-        <a href={gallery1}>
-          <img alt="img1" src={gallery1} />
+        <a href={gallery3}>
+          <img alt="img1" src={gallery3} />
         </a>
-        <a href={gallery1}>
-          <img alt="img1" src={gallery1} />
+        <a href={gallery4}>
+          <img alt="img1" src={gallery4} />
         </a>
         <a href={gallery1}>
           <img alt="img1" src={gallery1} />
