@@ -6,6 +6,7 @@ import Login from "../pages/authentication/Login";
 import Register from "../pages/authentication/Register";
 import AllFoods from "../pages/AllFoods";
 import SingleFood from "../pages/SingleFood";
+import Gallery from "../pages/Gallery";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/gallery',
-            element: <h1>Gallery</h1>
+            element: <Gallery></Gallery>
         },
         {
             path: '/login',
