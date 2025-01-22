@@ -24,7 +24,9 @@ const Login = () => {
     const googleLoginHandler = () =>{
         handleGoogleLogin()
         .then(res => {
-            if(res.user){
+            console.log('from login', res.user);
+            
+            if(res.user){ 
                 Swal.fire({
                     icon: "success",
                     title: "Login Successful!",
