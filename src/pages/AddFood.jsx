@@ -1,10 +1,29 @@
 import React from "react";
 // import Heading from "../components/Heading"; 
 import useAuth from "../hooks/useAuth";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import {useMutation, useQueryClient} from '@tanstack/react-query'
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const AddFood = () => {
   const { user } = useAuth();
-  // console.log(user);
+  const axiosSecure = useAxiosSecure()
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+  const {isPending, mutateAsync} = useMutation({
+    mutationFn: async foodData =>{
+      await axiosSecure.post(`/add-food`, foodData)
+    },
+    onSuccess: () => {
+      console.log('Food Data Saved');
+      queryClient.invalidateQueries({queryKey: ['foods']}) // এর মানে, React Query বুঝবে যে এই কুইরির ক্যাশ করা ডেটা আর আপডেটেড নয় এবং এটি ব্যাকগ্রাউন্ডে রি-ফেচিং শুরু করবে।'jobs' নামের কুইরির ক্যাশ ডেটা পুরোনো হয়েছে। ব্যাকগ্রাউন্ডে নতুন ডেটা আনো। UI-তে সর্বদা সঠিক এবং আপডেটেড ডেটা দেখাও।       
+    },
+    onError: err => {
+      console.log(err); 
+    }
+  })
+
 
   //handle form
   const handleSubmit = async (e) => { 
@@ -37,7 +56,16 @@ const AddFood = () => {
       }
     };
 
-    console.log('form DAta', formData);
+    console.log('form DAta', formData); 
+    //Try Catch blog 
+    try{
+      await mutateAsync(formData)
+      form.reset()
+      toast.success('Data Add Successful') 
+
+    }catch(err){
+     toast.error('Wrong', err.message)
+    }
     
 
   };
