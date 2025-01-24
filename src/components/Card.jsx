@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 const Card = ({food}) => {
 
   const {
+    _id,
     foodName,
     foodImage,
-    foodCategory,
     quantity,
     price,
-    foodOrigin,
-    description} = food
+    description} = food || {}
 
     return (
         <div className="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full py-6 rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
@@ -34,8 +33,10 @@ const Card = ({food}) => {
           <div className="mt-8 flex items-center flex-wrap gap-4">
             <h3 className="text-xl text-gray-800 font-bold flex-1">Price: ${price}</h3>
             <h3 className="text-xl text-gray-800 font-bold flex-1">Quantity: ${quantity}</h3>
-            <Link to='/single-food'>
-            <button type="button"
+            <Link to={`/single-food/${_id}`}>
+            <button 
+              // type="button"
+              
               className="px-5 py-2.5 rounded-lg text-white text-sm tracking-wider bg-blue-600 hover:bg-blue-700 outline-none">Details</button>
             </Link>
           </div>

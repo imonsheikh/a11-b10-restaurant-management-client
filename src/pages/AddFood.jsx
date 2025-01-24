@@ -53,7 +53,8 @@ const AddFood = () => {
         email,
         name: user?.displayName,
         photo: user?.photoURL 
-      }
+      }, 
+      purchaseCount: 0
     };
 
     console.log('form DAta', formData); 
