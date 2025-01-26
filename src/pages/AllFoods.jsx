@@ -28,11 +28,11 @@ const AllFoods = () => {
             </div>  
 
             <div>
-<div class="relative mr-6 my-2">
+<div className="relative mr-6 my-2">
   <input  
   onChange={(e) => setSearch(e.target.value)}
-  type="search" class="bg-purple-white shadow rounded border-2 p-3" placeholder="Search by name..."/>
-  <div class="absolute pin-r pin-t mt-3 mr-4 text-purple-lighter">
+  type="search" className="bg-purple-white shadow rounded border-2 p-3" placeholder="Search by name..."/>
+  <div className="absolute pin-r pin-t mt-3 mr-4 text-purple-lighter">
 
 
   </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const SingleFood = () => { 
 
@@ -41,12 +41,12 @@ const {
               <div className="flex space-x-4 items-end absolute right-0 max-md:right-4 bottom-0">
                 <div className="bg-white w-9 h-9 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 fill-[#333] inline" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+                    <path fillRule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clipRule="evenodd" data-original="#000000"></path>
                   </svg>
                 </div>
                 <div className="bg-[#333] w-9 h-9 grid items-center justify-center rounded-full -rotate-90 shrink-0 cursor-pointer">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 fill-[#fff] inline" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+                    <path fillRule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clipRule="evenodd" data-original="#000000"></path>
                   </svg>
                 </div>
               </div>
@@ -125,7 +125,9 @@ const {
             </div>
   
             <div className="flex gap-4 mt-6">
+              <Link to={`/food-purchase/${id}`}>
               <button type="button" className="w-full max-w-[200px] px-4 py-3 bg-gray-800 hover:bg-gray-900 text-white text-sm font-semibold rounded">Purchase</button>
+              </Link>
               <button type="button" className="w-full max-w-[200px] px-4 py-2.5 border border-gray-800 bg-transparent hover:bg-gray-50 text-gray-800 text-sm font-semibold rounded">Add to cart</button>
             </div>
   
@@ -139,8 +141,8 @@ const {
               <h1>sd</h1>
             </div>
 
-            <div>
-            <h1>Purchase Count: <span>{purchaseCount}</span></h1>
+            <div className=''>
+            <h1 className='border p-5 bg-red-400 font-bold text-xl mt-2'>Purchase Count: <span>{purchaseCount}</span></h1>
             </div>
 
           </div>

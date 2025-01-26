@@ -9,7 +9,9 @@ const Card = ({food}) => {
     foodImage,
     quantity,
     price,
-    description} = food || {}
+    description,
+    buyer  
+  } = food || {}
 
     return (
         <div className="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-full py-6 rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
@@ -29,6 +31,12 @@ const Card = ({food}) => {
   
         <div className="px-6">
           <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Desc: </span>{description}</p>
+         <div className='flex gap-3 justify-between'>
+         <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Buyer Name: </span>{buyer?.name}</p>
+          <div className='w-10 h-10'>
+            <img className='rounded-full w-full h-full' src={buyer?.photo} alt="" />
+          </div>
+         </div>
   
           <div className="mt-8 flex items-center flex-wrap gap-4">
             <h3 className="text-xl text-gray-800 font-bold flex-1">Price: ${price}</h3>
