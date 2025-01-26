@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
+import moment from 'moment'
 // import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 const FoodPurchase = () => { 
@@ -10,7 +11,8 @@ const FoodPurchase = () => {
   const [food,setFood] = useState({}) 
   const {user} = useAuth() 
   const navigate = useNavigate()
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure() 
+  const currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
 
   useEffect(() => {
    const fetchAllFoods = async () => {
@@ -43,6 +45,7 @@ const handleSubmit = async (e) => {
 
 
   const purchaseData = {
+     email: user?.email,
      foodName,
      foodImage,
      foodCategory,
@@ -52,7 +55,8 @@ const handleSubmit = async (e) => {
      description,
      purchaseCount,
      buyer,
-     purchaseId: _id 
+     buyingDate: currentDate,
+     purchaseId: _id,
   } 
   console.log(purchaseData);
   
@@ -64,7 +68,7 @@ const handleSubmit = async (e) => {
    console.log(data);
    navigate('/my-orders')
   }catch(err){
-   
+   toast.error(err.response.data) 
   }
 }
 
@@ -94,7 +98,7 @@ const handleSubmit = async (e) => {
               </h2>
   
               <form
-                // onSubmit={handleSubmit} 
+                onSubmit={handleSubmit} 
                 className="mt-8 grid sm:grid-cols-2 gap-6"
               >
                 <div>
