@@ -77,6 +77,7 @@ const MyOrders = () => {
                          <p>{order?.buyer?.email}</p>
                          <img className='rounded-full w-8 h-8' src={order?.buyer?.photo} alt="" />
                          </div>
+                         <p><span className='text-black'>Buying Date:</span> <br/>{order?.buyingDate}</p>
                     </div>
                 </td>
                 <td className="px-6 py-4 font-semibold text-gray-900 ">

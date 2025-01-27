@@ -64,6 +64,10 @@ const handleSubmit = async (e) => {
   //try catch
   try{
    const {data} = axiosSecure.post(`${import.meta.env.VITE_API_URL}/add-food-purchase`, purchaseData)
+
+   //Validation for own product purchase 
+   if(buyer.email === user?.email) return toast.error('You can not purchase your own product') 
+    fetchAllFoods() 
    toast.success('Food Purchase Successful') 
    console.log(data);
    navigate('/my-orders')

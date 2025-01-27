@@ -12,6 +12,7 @@
 - CRUD Operations by DB
 - Dark and light theme
 - User Login and Registration
+- Search Functionality
 
 ## Npm packages:
 -  

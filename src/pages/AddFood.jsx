@@ -209,7 +209,7 @@ const AddFood = () => {
                 type="submit"
                 className="text-white w-max bg-[#007bff] hover:bg-blue-600 tracking-wide rounded text-sm px-4 py-2.5"
               >
-                Add Food
+                Add Item
               </button>
            </div>
             </form>
