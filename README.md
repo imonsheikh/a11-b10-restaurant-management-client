@@ -15,7 +15,12 @@
 - Search Functionality
 
 ## Npm packages:
--  
+- tanstack query
+- axios
+- lightGallery
+- moment
+- react-hot-toast
+- react-icons
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

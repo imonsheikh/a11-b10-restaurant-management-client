@@ -67,7 +67,7 @@ const handleSubmit = async (e) => {
 
    //Validation for own product purchase 
    if(buyer.email === user?.email) return toast.error('You can not purchase your own product') 
-    fetchAllFoods() 
+    // fetchAllFoods() 
    toast.success('Food Purchase Successful') 
    console.log(data);
    navigate('/my-orders')
