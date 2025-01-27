@@ -19,11 +19,11 @@ const MyFoods = () => {
     const {data} = await axiosSecure.get(`/foods/${user?.email}`)
     setFoods(data)
   }
-  console.log(foods); 
+  // console.log(foods); 
 
   //Handle Update 
   const handleUpdate = (id) => {
-    console.log(id);
+    // console.log(id);
     
   }
 

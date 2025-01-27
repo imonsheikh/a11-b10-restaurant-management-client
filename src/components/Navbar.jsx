@@ -10,11 +10,11 @@ const Navbar = () => {
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
           <img className='w-auto h-7' src={logo} alt='' />
-          <span className='font-bold'>Tasty Food</span>
+          <span className='font-bold text-sm md:text-base'>Tasty Food</span>
         </Link>
       </div>
       <div className='flex-none'>
-        <ul className='menu menu-horizontal px-1'>
+        <ul className=' menu-horizontal md:space-x-5 space-x-1 pr-1'>
           <DarkMode></DarkMode>
           <li>
             <Link to='/'>Home</Link>

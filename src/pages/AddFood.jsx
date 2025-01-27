@@ -16,7 +16,7 @@ const AddFood = () => {
       await axiosSecure.post(`/add-food`, foodData)
     },
     onSuccess: () => {
-      console.log('Food Data Saved');
+      // console.log('Food Data Saved');
       queryClient.invalidateQueries({queryKey: ['foods']}) // এর মানে, React Query বুঝবে যে এই কুইরির ক্যাশ করা ডেটা আর আপডেটেড নয় এবং এটি ব্যাকগ্রাউন্ডে রি-ফেচিং শুরু করবে।'jobs' নামের কুইরির ক্যাশ ডেটা পুরোনো হয়েছে। ব্যাকগ্রাউন্ডে নতুন ডেটা আনো। UI-তে সর্বদা সঠিক এবং আপডেটেড ডেটা দেখাও।       
     },
     onError: err => {
@@ -27,7 +27,7 @@ const AddFood = () => {
 
   //handle form
   const handleSubmit = async (e) => { 
-    console.log('test');
+    // console.log('test');
     
     e.preventDefault();
     const form = e.target;
@@ -57,7 +57,7 @@ const AddFood = () => {
       purchaseCount: 0
     };
 
-    console.log('form DAta', formData); 
+    // console.log('form DAta', formData); 
     //Try Catch blog 
     try{
       await mutateAsync(formData)

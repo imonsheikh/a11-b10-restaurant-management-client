@@ -17,7 +17,7 @@ const FoodPurchase = () => {
   useEffect(() => {
    const fetchAllFoods = async () => {
        const {data} = await axiosSecure.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
-       console.log(data);
+      //  console.log(data);
        setFood(data) 
    } 
    fetchAllFoods() 
@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
      buyingDate: currentDate,
      purchaseId: _id,
   } 
-  console.log(purchaseData);
+  // console.log(purchaseData);
   
  
   //try catch

@@ -11,11 +11,11 @@ const Team = () => {
                 <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-8 max-sm:justify-center text-center mt-12">
                     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-[1.02] transition-all">
                         <div className="bg-[#ff3d8c] h-32"></div>
-                        <img src="https://readymadeui.com/team-1.webp" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRONkc79EvIvZMARjHhSCRPlTbUAVqpmvrnMA&s" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
 
                         <div className="p-6">
-                            <h4 className="text-gray-800 text-base font-extrabold">John Doe</h4>
-                            <p className="text-gray-600 text-xs mt-1">Software Engineer</p>
+                            <h4 className="text-gray-800 text-base font-extrabold">Captain Miller</h4>
+                            <p className="text-gray-600 text-xs mt-1">Head Chef</p>
                             <p className="text-gray-600 mt-4 text-sm">A chef is a professional cook and tradesperson who is proficient in all aspects of food preparation</p>
 
                             <div className="space-x-4 mt-6">
@@ -49,11 +49,11 @@ const Team = () => {
 
                     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-[1.02] transition-all">
                         <div className="bg-[#c730cb] h-32"></div>
-                        <img src="https://readymadeui.com/team-2.webp" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr7PV-CDAQHz-Pc4_OrVsvTBOaRdazjREHTw&s" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
 
                         <div className="p-6">
                             <h4 className="text-gray-800 text-base font-extrabold">Mark Adair</h4>
-                            <p className="text-gray-600 text-xs mt-1">Software Engineer</p>
+                            <p className="text-gray-600 text-xs mt-1">Chef</p>
                             <p className="text-gray-600 mt-4 text-sm">Chef is a 2014 American road comedy-drama film written, produced, and directed by Jon Favreau.</p>
 
                             <div className="space-x-4 mt-6">
@@ -87,11 +87,11 @@ const Team = () => {
 
                     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:scale-[1.02] transition-all">
                         <div className="bg-[#00a8ff] h-32"></div>
-                        <img src="https://readymadeui.com/team-3.webp" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfiMuvT4GgnOTGUtFDdMzYBkkmSFnuepxzQ&s" className="w-36 h-36 border-4 border-white rounded-full -mt-[72px] shadow-xl inline-block" />
 
                         <div className="p-6">
                             <h4 className="text-gray-800 text-base font-extrabold">Simon Konecki</h4>
-                            <p className="text-gray-600 text-xs mt-1">Web Designer</p>
+                            <p className="text-gray-600 text-xs mt-1">Assistant Chef</p>
                             <p className="text-gray-600 mt-4 text-sm">a skilled and trained cook who works in a hotel or restaurant, especially the most important cook.</p>
 
                             <div className="space-x-4 mt-6">

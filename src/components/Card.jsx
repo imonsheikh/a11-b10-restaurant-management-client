@@ -8,9 +8,10 @@ const Card = ({food}) => {
     foodName,
     foodImage,
     quantity,
-    price,
+    price, 
     description,
-    buyer  
+    buyer,
+    purchaseCount  
   } = food || {}
 
     return (
@@ -33,6 +34,7 @@ const Card = ({food}) => {
           <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Desc: </span>{description}</p>
          <div className='flex gap-3 justify-between'>
          <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Buyer Name: </span>{buyer?.name}</p>
+         <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>purchase Count: </span>{purchaseCount}</p>
           <div className='w-10 h-10'>
             <img className='rounded-full w-full h-full' src={buyer?.photo} alt="" />
           </div>

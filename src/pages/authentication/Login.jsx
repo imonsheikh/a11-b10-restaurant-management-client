@@ -24,7 +24,7 @@ const Login = () => {
     const googleLoginHandler = () =>{
         handleGoogleLogin()
         .then(res => {
-            console.log('from login', res.user);
+            // console.log('from login', res.user);
             
             if(res.user){ 
                 Swal.fire({

@@ -10,7 +10,7 @@ const SingleFood = () => {
    useEffect(() => {
     const fetchAllFoods = async () => {
         const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
-        console.log(data);
+        // console.log(data);
         setFood(data) 
     } 
     fetchAllFoods() 
