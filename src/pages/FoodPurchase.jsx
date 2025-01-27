@@ -101,7 +101,7 @@ const handleSubmit = async (e) => {
                 onSubmit={handleSubmit} 
                 className="mt-8 grid sm:grid-cols-2 gap-6"
               >
-                <div>
+                {/* <div>
                   <label className="text-gray-800 text-sm block mb-2">
                     Food Name
                   </label>
@@ -139,6 +139,12 @@ const handleSubmit = async (e) => {
                     placeholder="quantity"
                     className="w-full rounded py-2.5 px-4 border border-gray-300 text-sm focus:border-blue-600 outline-none"
                   />
+                </div> */}  
+                <div>
+                <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Food Name: </span>{foodName}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Price: </span>${price}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Quantity: </span>{quantity}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-3"><span className='text-black font-bold'>Buying Date: </span>{currentDate}</p>
                 </div>
             
               {/* Buyer Details starts */}
@@ -172,7 +178,7 @@ const handleSubmit = async (e) => {
               {/* Buyer Details ends */}
          
   
-             <div className='text-center mt-20'>
+             <div className='text-start mt-20 '>
              <button 
                   type="submit"
                   className="text-white w-max font-bold text-lg bg-[#007bff] hover:bg-blue-600 tracking-wide rounded px-14 py-4"

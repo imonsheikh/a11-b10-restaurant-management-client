@@ -101,7 +101,7 @@ const Login = () => {
         {/* Login title starts */}
         <div className="text-indigo-500 md:order-1 flex items-center gap-2 justify-center">
                     {/* <!-- Heroicon - Chip Outline -->  */}
-                    <h1 className='font-bold text-xl'>Sports King</h1>
+                    <h1 className='font-bold text-xl'>Tasty Food</h1>
                     <img
                     className='w-12 h-12 border-4 border-sky-500 rounded-full p-1'
                     src={logo2} alt="" />

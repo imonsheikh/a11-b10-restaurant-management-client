@@ -1,28 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import Heading from "../components/Heading"; 
 import useAuth from "../hooks/useAuth";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import {useMutation, useQueryClient} from '@tanstack/react-query'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import axios from "axios";
 
-const AddFood = () => {
-  const { user } = useAuth();
+const UpdateFood = () => { 
+  const [food,setFood] = useState([])
+  const { user } = useAuth(); 
+  const {id} = useParams()
   const axiosSecure = useAxiosSecure()
   const queryClient = useQueryClient()
   const navigate = useNavigate()
   const {isPending, mutateAsync} = useMutation({
     mutationFn: async foodData =>{
-      await axiosSecure.post(`/add-food`, foodData)
+      await axiosSecure.put(`/update-food/${id}`, foodData)
     },
     onSuccess: () => {
       console.log('Food Data Saved');
-      queryClient.invalidateQueries({queryKey: ['foods']}) // এর মানে, React Query বুঝবে যে এই কুইরির ক্যাশ করা ডেটা আর আপডেটেড নয় এবং এটি ব্যাকগ্রাউন্ডে রি-ফেচিং শুরু করবে।'jobs' নামের কুইরির ক্যাশ ডেটা পুরোনো হয়েছে। ব্যাকগ্রাউন্ডে নতুন ডেটা আনো। UI-তে সর্বদা সঠিক এবং আপডেটেড ডেটা দেখাও।       
+      queryClient.invalidateQueries({queryKey: ['foods-update']}) // এর মানে, React Query বুঝবে যে এই কুইরির ক্যাশ করা ডেটা আর আপডেটেড নয় এবং এটি ব্যাকগ্রাউন্ডে রি-ফেচিং শুরু করবে।'jobs' নামের কুইরির ক্যাশ ডেটা পুরোনো হয়েছে। ব্যাকগ্রাউন্ডে নতুন ডেটা আনো। UI-তে সর্বদা সঠিক এবং আপডেটেড ডেটা দেখাও।       
     },
     onError: err => {
       console.log(err); 
     }
   })
+
+  useEffect(() => {
+    fetchFoodData()
+  }, [id])
+  const fetchFoodData = async () => {
+    const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/food/${id}`)
+    console.log(data);
+    setFood(data)
+  } 
+  const {
+    _id,
+    foodName,
+    foodImage,
+    foodCategory,
+    foodOrigin,
+    quantity,
+    price,
+    description,
+    buyer  
+  } = food || {}
 
 
   //handle form
@@ -62,7 +85,7 @@ const AddFood = () => {
     try{
       await mutateAsync(formData)
       form.reset()
-      toast.success('Data Add Successful')
+      toast.success('Data Update Successful')
       navigate('/my-foods') 
 
     }catch(err){
@@ -74,8 +97,8 @@ const AddFood = () => {
 
   return (
     <div>
-      <div className="bg-blue-500 text-center text-white py-5">
-        <h1 className="font-semibold text-4xl">ADD FOOD</h1>
+      <div className="bg-green-500 text-center text-white py-5">
+        <h1 className="font-semibold text-4xl">Update FOOD</h1>
       </div>
       <div className="font-[sans-serif]">
         <div className="bg-gradient-to-r from-blue-700 to-blue-300 w-full h-60">
@@ -103,7 +126,8 @@ const AddFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Food Name
                 </label>
-                <input 
+                <input
+                  defaultValue={foodName} 
                   name="foodName"
                   type="text"
                   placeholder="Food Name"
@@ -114,7 +138,8 @@ const AddFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Food Image
                 </label>
-                <input
+                <input 
+                  defaultValue={foodImage}
                   type="url" 
                   name="foodImage"
                   placeholder="Food Image"
@@ -125,20 +150,24 @@ const AddFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Food Category
                 </label>
-                <select
-                  type="text"
-                  name="foodCategory"
-                  placeholder="Food Category."
-                  className="w-full rounded py-2.5 px-4 border border-gray-300 text-sm focus:border-blue-600 outline-none"
-                  >
-                  <option value="Fast Food">Fast Food</option>
-                  <option value="Healthy Food">Healthy Food</option>
-                  <option value="Sea Food">Sea Food</option>
-                  </select>
+               {foodCategory && (
+                 <select 
+                 defaultValue={foodCategory}
+                 type="text"
+                 name="foodCategory"
+                 placeholder="Food Category."
+                 className="w-full rounded py-2.5 px-4 border border-gray-300 text-sm focus:border-blue-600 outline-none"
+                 >
+                 <option value="Fast Food">Fast Food</option>
+                 <option value="Healthy Food">Healthy Food</option>
+                 <option value="Sea Food">Sea Food</option>
+                 </select>
+               )}
               </div>
               <div>
                 <label className="text-gray-800 text-sm block mb-2">Quantity</label>
-                <input 
+                <input
+                  defaultValue={quantity} 
                   name="quantity"
                   type="number"
                   placeholder="quantity"
@@ -148,6 +177,7 @@ const AddFood = () => {
               <div>
                 <label className="text-gray-800 text-sm block mb-2">Price</label>
                 <input 
+                  defaultValue={price}
                   name="price"
                   type="number"
                   placeholder="Price"
@@ -158,7 +188,8 @@ const AddFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Food Origin(Country)
                 </label>
-                <select 
+                <select
+                  defaultValue={foodOrigin} 
                   name="foodOrigin"
                   type="text"
                   placeholder="country"
@@ -196,7 +227,8 @@ const AddFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Description
                 </label>
-                <textarea
+                <textarea 
+                  defaultValue={description}
                   name="description" 
                   placeholder="ingredients, making procedure etc"
                   rows="6"
@@ -207,9 +239,9 @@ const AddFood = () => {
            <div>
            <button 
                 type="submit"
-                className="text-white w-max bg-[#007bff] hover:bg-blue-600 tracking-wide rounded text-sm px-4 py-2.5"
+                className="text-white w-max bg-green-600 hover:bg-blue-600 tracking-wide rounded text-base px-4 py-2.5 font-bold"
               >
-                Add Food
+                Update Food
               </button>
            </div>
             </form>
@@ -220,4 +252,4 @@ const AddFood = () => {
   );
 };
 
-export default AddFood;
+export default UpdateFood;

@@ -469,7 +469,7 @@ const Register = () => {
                 <p className="font-semibold text-center">
                   Already Have an account? Go to{" "}
                   <Link
-                    to="/auth/login"
+                    to="/login"
                     className="underline text-red-800 font-bold"
                   >
                     Login
