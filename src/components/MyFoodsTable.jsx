@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
-const MyFoodsTable = ({food, handleUpdate}) => {
+const MyFoodsTable = ({food, handleUpdate}) => { 
+
+    const {user} = useAuth()
+
     const {
         _id,
         foodName,
@@ -31,7 +35,10 @@ const MyFoodsTable = ({food, handleUpdate}) => {
                 <img src={foodImage} className="w-20 h-20  shrink-0" />
                 <div className="ml-4">
                   <p className="text-sm text-black">{foodName}</p>
-                  {/* <p className="text-xs text-gray-500 mt-0.5">gladys@example.com</p> */}
+                  <div className='flex gap-3 items-center'>
+                  <p className="text-xs text-gray-500 mt-0.5"><span className='text-black'>ME: </span>{user?.email}</p> 
+                  <img className='rounded-full w-8 h-8' src={user?.photoURL} alt="" />
+                  </div>
                 </div>
               </div>
             </td>
@@ -57,7 +64,8 @@ const MyFoodsTable = ({food, handleUpdate}) => {
                     data-original="#000000" />
                 </svg>
               </button>
-              <button title="Delete">
+            </Link>
+            <button title="Delete">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 fill-red-500 hover:fill-red-700" viewBox="0 0 24 24">
                   <path
                     d="M19 7a1 1 0 0 0-1 1v11.191A1.92 1.92 0 0 1 15.99 21H8.01A1.92 1.92 0 0 1 6 19.191V8a1 1 0 0 0-2 0v11.191A3.918 3.918 0 0 0 8.01 23h7.98A3.918 3.918 0 0 0 20 19.191V8a1 1 0 0 0-1-1Zm1-3h-4V2a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v2H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2ZM10 4V3h4v1Z"
@@ -66,7 +74,6 @@ const MyFoodsTable = ({food, handleUpdate}) => {
                     data-original="#000000" />
                 </svg>
               </button>
-            </Link>
             </td>
           </tr>   
         </>

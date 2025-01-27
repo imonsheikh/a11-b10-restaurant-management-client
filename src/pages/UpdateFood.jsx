@@ -188,17 +188,19 @@ const UpdateFood = () => {
                 <label className="text-gray-800 text-sm block mb-2">
                   Food Origin(Country)
                 </label>
-                <select
-                  defaultValue={foodOrigin} 
-                  name="foodOrigin"
-                  type="text"
-                  placeholder="country"
-                  className="w-full rounded py-2.5 px-4 border border-gray-300 text-sm focus:border-blue-600 outline-none"
-                >
-                  <option value="Bangladesh">Bangladesh</option>
-                  <option value="Bangladesh">USA</option>
-                  <option value="Australia">Australia</option>
-                </select>
+               {foodOrigin && (
+                 <select
+                 defaultValue={foodOrigin} 
+                 name="foodOrigin"
+                 type="text"
+                 placeholder="country"
+                 className="w-full rounded py-2.5 px-4 border border-gray-300 text-sm focus:border-blue-600 outline-none"
+               >
+                 <option value="Bangladesh">Bangladesh</option>
+                 <option value="Bangladesh">USA</option>
+                 <option value="Australia">Australia</option>
+               </select>
+               )}
               </div>
               <div>
                 <label className="text-gray-800 text-sm block mb-2">

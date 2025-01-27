@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import logo from '../assets/food-logo.png'
 import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import DarkMode from './DarkMode'
 const Navbar = () => {
   const { user, handleLogout } = useAuth()
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
       </div>
       <div className='flex-none'>
         <ul className='menu menu-horizontal px-1'>
+          <DarkMode></DarkMode>
           <li>
             <Link to='/'>Home</Link>
           </li>
