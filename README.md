@@ -4,8 +4,10 @@
 ## Project Purpose: 
 **For manage a restaurant food products by multiple user**
 
-## Live Url: 
-**LiveLink:** [https://restaurant-management-399f0.web.app/](https://restaurant-management-399f0.web.app/)
+## Live Url & Server Repo Link: 
+**LiveLink:** [https://restaurant-management-399f0.web.app/](https://restaurant-management-399f0.web.app/) 
+
+**Serve Repo Link:** [https://github.com/imonsheikh/a11-b10-restaurant-management-server](https://github.com/imonsheikh/a11-b10-restaurant-management-server)
 
 ## Key Features: 
 
